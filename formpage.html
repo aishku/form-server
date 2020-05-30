@@ -1,0 +1,118 @@
+<html>
+	<head>
+ 		<title>Form page</title>
+		<style>
+		body {			
+			padding-left:20%;
+			padding-right:20%;
+		}
+    .outerDiv{
+			border: 1px solid #ababab;
+		}
+    .headerDiv{
+			background-color:#ababab;
+			padding:10px;
+			color:white;
+			font-weight:bold;
+
+		}
+		.formDiv  {
+			padding-top:10px;
+			padding-left:20%;
+			padding-right:20%;
+		}
+		.elementDiv{
+			padding:5px;
+		}
+		.labelDiv{
+			margin-bottom:2px;
+		}
+		input{
+			width:100%;
+		}
+		textarea {
+			width: 100%;
+			height: 100px;
+			resize: none;
+		}
+		.voidButton{
+		}
+		.modalContainer {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #efefef;
+			padding-top: 15%;
+		}
+		.modal {
+			background-color: white;
+			border: 1px solid #ababab;
+			padding: 20px;
+			width: 400px;
+			margin: auto;
+		}
+		.hidden {
+			display: none;
+		}
+		</style>
+	</head>
+  
+	<body>
+		<div class ="outerDiv">
+			<div class ="headerDiv">
+				Student Enrollment Form
+				<button onclick="showModal()" class="voidButton">Void</button>
+			</div>
+			<div class ="formDiv">
+				<form>
+					<div class="elementDiv">
+						<div class="labelDiv">
+							<label>Student Name</label>
+						</div>
+						<div>
+							<input type="text" name="sname"/>
+						</div>
+					</div>
+					<div class="elementDiv">
+						<div class="labelDiv">
+							<label>Student Age</label>
+						</div>
+						<div>
+							<input type="text" name="sage"/>
+						</div>
+					</div>
+					<div class="elementDiv">
+						<div class="labelDiv">
+							<label>About Student</label>
+						</div>
+						<div>
+							<textarea name="sdesc"></textarea>
+						</div>
+					</div>
+					<div class="elementDiv">
+						<input type="submit"/>
+					</div>
+        </form>
+			</div>
+		</div>
+		<div id="overlay" class="modalContainer hidden">
+			<div class="modal">
+				<div class="modalHeader">
+					My Modal 
+					<button class="dismiss">X</button>
+				</div>
+				<div class="modalBody">
+					<textarea name="reason"></textarea>
+				</div>
+				<button>Cancel the form</button>
+			</div>
+		</div>
+	<script type="text/javascript">
+		function showModal() {
+			document.getElementById("overlay").classList.remove("hidden");
+		}
+	</script>
+  </body>
+</html>
